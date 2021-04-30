@@ -14,6 +14,9 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+
+@CrossOrigin(origins = "*")
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/v1/task")
@@ -50,9 +53,11 @@ public class TaskController  {
         return taskMapper.mapToTaskDto(savedTask);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "deleteTask")
+    @RequestMapping(method = RequestMethod.DELETE, value = "deleteTask/{taskId}")
     public void deleteTask(@PathVariable Long taskId){
         service.deleteTask(taskId);
+
+
     }
 
 

@@ -1,6 +1,6 @@
 call runcrud
 if "%ERRORLEVEL%" == "0" goto openbrowser
-echo Cannot open runcrud
+echo Cannot call runcrud
 echo.
 goto fail
 
